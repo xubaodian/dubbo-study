@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f60947be-4c8e-40b2-bc36-aea97d6761af" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demoapi/src/main/java/com/xbd/demoapi/entity/RetMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demoapi/src/main/java/com/xbd/demoapi/entity/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dubbo-architecture.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consumer/src/main/java/com/xbd/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/java/com/xbd/Consumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consumer/src/main/resources/META-INF/spring/dubbo-consumer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/resources/META-INF/spring/dubbo-consumer.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demoapi/src/main/java/com/xbd/demoapi/DemoApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/demoapi/src/main/java/com/xbd/demoapi/service/DemoApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/target/classes/META-INF/spring/dubbo-consumer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/target/classes/META-INF/spring/dubbo-consumer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/target/classes/com/xbd/Consumer.class" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/target/classes/com/xbd/Consumer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demoapi/target/classes/com/xbd/demoapi/DemoApi.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/provider/src/main/java/com/xbd/provider/DemoApiImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/provider/src/main/java/com/xbd/provider/DemoApiImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/provider/src/main/java/com/xbd/provider/Provider.java" beforeDir="false" afterPath="$PROJECT_DIR$/provider/src/main/java/com/xbd/provider/Provider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/provider/src/main/resources/META-INF/spring/dubbo-provider.xml" beforeDir="false" afterPath="$PROJECT_DIR$/provider/src/main/resources/META-INF/spring/dubbo-provider.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/provider/target/classes/META-INF/spring/dubbo-provider.xml" beforeDir="false" afterPath="$PROJECT_DIR$/provider/target/classes/META-INF/spring/dubbo-provider.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/provider/target/classes/com/xbd/provider/DemoApiImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/provider/target/classes/com/xbd/provider/DemoApiImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/provider/target/classes/com/xbd/provider/Provider.class" beforeDir="false" afterPath="$PROJECT_DIR$/provider/target/classes/com/xbd/provider/Provider.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/demoapi/target/" />
@@ -140,10 +134,12 @@
       <file leaf-file-name="DemoApiImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/provider/src/main/java/com/xbd/provider/DemoApiImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="77" column="16" selection-start-line="77" selection-start-column="16" selection-end-line="77" selection-end-column="16" />
+            <state relative-caret-position="-258">
+              <caret line="54" column="14" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2283#2284#0" expanded="true" />
+                <element signature="e#2363#2364#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -430,15 +426,24 @@
       <updated>1528372353345</updated>
       <workItem from="1528372354805" duration="7107000" />
       <workItem from="1528418711210" duration="5958000" />
-      <workItem from="1528439558767" duration="3938000" />
+      <workItem from="1528439558767" duration="4315000" />
     </task>
+    <task id="LOCAL-00001" summary="添加注释">
+      <created>1528449278244</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1528449278244</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17003000" />
+    <option name="totallyTimeSpent" value="17380000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -462,7 +467,7 @@
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.43723404" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.19361702" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -476,6 +481,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="添加注释" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加注释" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2383,22 +2392,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demoapi/src/main/java/com/xbd/demoapi/entity/RetMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
-          <folding>
-            <element signature="e#285#286#0" expanded="true" />
-            <element signature="e#332#333#0" expanded="true" />
-            <element signature="e#370#371#0" expanded="true" />
-            <element signature="e#404#405#0" expanded="true" />
-            <element signature="e#434#435#0" expanded="true" />
-            <element signature="e#480#481#0" expanded="true" />
-            <element signature="e#518#519#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demoapi/src/main/java/com/xbd/demoapi/service/DemoApi.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
@@ -2460,12 +2453,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/demoapi/src/main/java/com/xbd/demoapi/entity/RetMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+          <folding>
+            <element signature="e#285#286#0" expanded="true" />
+            <element signature="e#332#333#0" expanded="true" />
+            <element signature="e#370#371#0" expanded="true" />
+            <element signature="e#404#405#0" expanded="true" />
+            <element signature="e#434#435#0" expanded="true" />
+            <element signature="e#480#481#0" expanded="true" />
+            <element signature="e#518#519#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/provider/src/main/java/com/xbd/provider/DemoApiImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="77" column="16" selection-start-line="77" selection-start-column="16" selection-end-line="77" selection-end-column="16" />
+        <state relative-caret-position="-258">
+          <caret line="54" column="14" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2283#2284#0" expanded="true" />
+            <element signature="e#2363#2364#0" expanded="true" />
           </folding>
         </state>
       </provider>

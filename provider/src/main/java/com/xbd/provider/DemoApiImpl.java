@@ -16,7 +16,9 @@ public class DemoApiImpl implements DemoApi {
     List<Student> stuList = new ArrayList<>();
 
     /**
-     * 获取
+     * 根据Id获取学生信息，若是连接数据库，调用dao层接口查询学生信息
+     * @param Id String
+     * @return Student
      **/
     @Override
     public Student getInfoById(String Id) {
@@ -24,6 +26,10 @@ public class DemoApiImpl implements DemoApi {
         return stu;
     }
 
+    /**
+     * 插入学生信息，并判断是否插入成功，返回操作信息
+     * @param stu
+     */
     @Override
     public RetMessage insertInfo(Student stu) {
         RetMessage ret = new RetMessage();
@@ -43,6 +49,11 @@ public class DemoApiImpl implements DemoApi {
         return ret;
     }
 
+    /**
+     * 删除学生信息
+     * @param Id
+     * @return RetMessage
+     */
     @Override
     public RetMessage deleteById(String Id) {
         RetMessage ret = new RetMessage();

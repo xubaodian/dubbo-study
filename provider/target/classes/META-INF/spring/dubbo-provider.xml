@@ -20,6 +20,6 @@
     <bean id="demoService" class="com.xbd.provider.DemoApiImpl"/>
 
     <!-- declare the service interface to be exported -->
-    <dubbo:service interface="com.xbd.demoapi.DemoApi" ref="demoService"/>
+    <dubbo:service interface="com.xbd.demoapi.service.DemoApi" ref="demoService"/>
 
 </beans>

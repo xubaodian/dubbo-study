@@ -13,5 +13,5 @@
    <!-- <dubbo:registry protocol="zookeeper" address="localhost:2181"/>-->
     <dubbo:registry protocol="zookeeper" address="zookeeper://192.168.56.10:10000"/>
 
-    <dubbo:reference id="demoService" check="false" interface="com.xbd.demoapi.DemoApi"/>
+    <dubbo:reference id="demoService" check="false" interface="com.xbd.demoapi.service.DemoApi"/>
 </beans>
