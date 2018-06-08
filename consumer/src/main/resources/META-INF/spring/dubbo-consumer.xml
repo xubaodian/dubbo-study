@@ -1,0 +1,17 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+       http://dubbo.apache.org/schema/dubbo
+       http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+<!-- provider's application name, used for tracing dependency relationship -->
+    <dubbo:application name="consumer"/>
+
+    <!-- use multicast registry center to export service -->
+   <!-- <dubbo:registry protocol="zookeeper" address="localhost:2181"/>-->
+    <dubbo:registry protocol="zookeeper" address="zookeeper://192.168.56.10:10000"/>
+
+    <dubbo:reference id="demoService" check="false" interface="com.xbd.demoapi.DemoApi"/>
+</beans>
