@@ -311,4 +311,148 @@ public interface DemoApi {
 </beans>
 
 ```
-服务实现类为DemoApiImpl.java，如下，注释解释了各个接口的意义
+服务实现类为DemoApiImpl.java，如下，各个接口的意义意义在注释中有解释。
+``` java
+package com.xbd.provider;
+
+import com.xbd.demoapi.entity.RetMessage;
+import com.xbd.demoapi.entity.Student;
+import com.xbd.demoapi.service.DemoApi;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class DemoApiImpl implements DemoApi {
+    /**
+     * 学生信息List,存放学生信息，本来打算在数据库中增删，为了简化例子，直接用一个List代替;
+     * 若是连接数据库进行增删改查，在此处调用dao层接口即可
+     */
+    List<Student> stuList = new ArrayList<>();
+
+    /**
+     * 根据Id获取学生信息，若是连接数据库，调用dao层接口查询学生信息
+     * @param Id String
+     * @return Student
+     **/
+    @Override
+    public Student getInfoById(String Id) {
+        Student stu = this.getInfo(Id);
+        return stu;
+    }
+
+    /**
+     * 插入学生信息，并判断是否插入成功，返回操作信息
+     * @param stu
+     */
+    @Override
+    public RetMessage insertInfo(Student stu) {
+        RetMessage ret = new RetMessage();
+        ret.setSuccess(false);
+        if(stu!=null && !isBlank(stu.getStuId()) && !isBlank(stu.getName())){
+            Student stuVo = this.getInfo(stu.getStuId());
+            if(stuVo != null) {
+                ret.setMessage("该用户已存在！");
+            } else{
+                stuList.add(stu);
+                ret.setSuccess(true);
+                ret.setMessage("成功");
+            }
+        } else {
+            ret.setMessage("数据不全，请检查！");
+        }
+        return ret;
+    }
+
+    /**
+     * 删除学生信息
+     * @param Id
+     * @return RetMessage
+     */
+    @Override
+    public RetMessage deleteById(String Id) {
+        RetMessage ret = new RetMessage();
+        ret.setSuccess(false);
+        if(!isBlank(Id)) {
+            int len = stuList.size();
+            for(int i = 0; i < len; i++) {
+                if(Id.equals(stuList.get(i).getStuId())){
+                    stuList.remove(i);
+                    ret.setSuccess(true);
+                    ret.setMessage("成功!");
+                    break;
+                }
+            }
+        } else {
+            ret.setMessage("Id为空，请检查输入数据");
+        }
+        return ret;
+    }
+
+    private Student getInfo(String Id){
+        Iterator<Student> it = stuList.iterator();
+        Student stu = null;
+        while (it.hasNext()) {
+            stu = it.next();
+            if(stu.getStuId().equals(Id)){
+                break;
+            }
+        }
+        return stu;
+    }
+
+    private boolean isBlank(String value){
+        return value == null || "".equals(value) || "null".equals(value);
+    }
+}
+```
+启动类provider.java如下,在代码中启动了spring支持。
+``` java
+package com.xbd.provider;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import java.io.IOException;
+
+public class Provider {
+    public static void main(String [] args) throws IOException {
+        System.setProperty("java.net.preferIPv4Stack", "true");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"META-INF/spring/dubbo-provider.xml"});
+        context.start();
+        System.out.println("the server start");
+        System.in.read(); // press any key to exit
+    }
+}
+```
+
+##### 消费者模块（consumer）
+消费者模块代码如下：
+``` java
+package com.xbd;
+
+import com.xbd.demoapi.entity.RetMessage;
+import com.xbd.demoapi.entity.Student;
+import com.xbd.demoapi.service.DemoApi;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Consumer {
+    public static void main(String [] args){
+        System.setProperty("java.net.preferIPv4Stack", "true");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"META-INF/spring/dubbo-consumer.xml"});
+        context.start();
+        DemoApi demoService = (DemoApi) context.getBean("demoService"); // get remote service proxy
+        Student student = new Student();
+        student.setStuId("111");
+        student.setName("xxx");
+        RetMessage retMessage1 = demoService.insertInfo(student);
+        System.out.println(retMessage1.getMessage());
+        RetMessage retMessage2 = demoService.insertInfo(student);
+        System.out.println(retMessage2.getMessage());
+    }
+}
+```
+同样的信息插入了两次，打印信息如下：
+```
+成功
+该用户已存在！
+```
+对照DemoServiceImpl中的实现，我们想要实现的功能已经跑通了，赶紧动手试一试吧。

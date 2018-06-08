@@ -14,7 +14,9 @@ public class Consumer {
         Student student = new Student();
         student.setStuId("111");
         student.setName("xxx");
-        RetMessage retMessage = demoService.insertInfo(student);
-        System.out.println(retMessage.getMessage());
+        RetMessage retMessage1 = demoService.insertInfo(student);
+        System.out.println(retMessage1.getMessage());
+        RetMessage retMessage2 = demoService.insertInfo(student);
+        System.out.println(retMessage2.getMessage());
     }
 }
